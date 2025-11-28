@@ -68,12 +68,7 @@ Para começar a usar o PWA no seu ambiente, siga estes passos:
 
 ### A. Credenciais de Acesso
 
-Use estas credenciais para aceder à Área Admin:
-
-| Campo | Valor |
-| :---: | :---: |
-| **Usuário** | `admin` |
-| **Senha** | `1234` |
+Use as suas credenciais para aceder à Área Admin:
 
 ### B. Fluxo de Criação de Convite (ID + QR Code)
 
