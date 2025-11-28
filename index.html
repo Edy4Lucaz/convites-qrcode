@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Convidados QR</title>
+    
+    <meta name="theme-color" content="#4169E1">
+    <link rel="manifest" href="manifest.json">
+    
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <div id="sidebar">
+        <button class="close-btn" onclick="toggleSidebar()">&times;</button>
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="#" onclick="showSection('reader-section')">Scanner (Leitura)</a></li>
+            <li><a href="#" onclick="showSection('list-section')">Lista de Presença</a></li>
+            <li><a href="#" onclick="showSection('admin-section')">Área Admin</a></li>
+        </ul>
+    </div>
+
+    <button class="open-btn" onclick="toggleSidebar()">☰ Menu</button>
+    
+    <div id="main-content">
+        
+        <header>
+            <h1>Controle de Convidados</h1>
+        </header>
+
+        <p id="status-message" style="text-align: center; margin-top: 10px;"></p>
+
+        <section id="reader-section" class="content-section active">
+            <h2>Scanner de Convites</h2>
+            <div id="reader"></div> 
+
+            <div id="result-box" class="pending">
+                <strong id="result-casal">Aguardando leitura...</strong>
+            </div>
+            
+            <button id="reset-button">Reiniciar Leitura</button>
+        </section>
+        
+        <section id="list-section" class="content-section" style="display:none;">
+            <h2>Lista de Convidados</h2>
+            
+            <div class="list-summary">
+                Presentes: <span id="count-presentes">0</span> |
+                Faltando: <span id="count-faltando">0</span> |
+                Total: <span id="count-total">0</span>
+            </div>
+            
+            <div class="list-options">
+                <button onclick="displayGuestList('presentes')">Chegados</button>
+                <button onclick="displayGuestList('faltando')">Não Chegados</button>
+                <button onclick="displayGuestList('geral')">Lista Geral</button>
+            </div>
+            
+            <div id="guest-list-output"></div> 
+        </section>
+
+        <section id="admin-section" class="content-section" style="display:none;">
+            <h2>Área de Administração</h2>
+            
+            <div id="login-form">
+                <h3>Login</h3>
+                <input type="text" id="admin-user" placeholder="Usuário (admin)">
+                <input type="password" id="admin-pass" placeholder="Senha (1234)">
+                <button onclick="handleLogin()">Entrar</button>
+                <p id="login-message" class="error"></p>
+            </div>
+
+            <div id="admin-content" style="display:none;">
+                
+                <h3>Adicionar Novo Convidado</h3>
+                <div class="input-group">
+                    <label for="new-casal-category">Grupo/Categoria:</label>
+                    <select id="new-casal-category">
+                        <option value="A">A: Família do Noivo (Dourado)</option>
+                        <option value="B">B: Família da Noiva (Carmezim)</option>
+                        <option value="C">C: Amigos (Azul Real)</option>
+                    </select>
+                </div>
+
+                <input type="text" id="new-casal" placeholder="Nome do Casal/Pessoa (ex: Pedro & Ana)">
+                <button onclick="addGuest()">Adicionar Convidado</button>
+                
+                <p id="admin-add-message" class="success"></p>
+                <p>Use o ID e Tipo abaixo para gerar o QR Code no PC:</p>
+                <div id="new-guest-id" class="code-output"></div>
+
+                <hr style="margin-top: 30px; margin-bottom: 20px;">
+
+                <h3>Remover Convidado por ID</h3>
+                <input type="text" id="delete-guest-id" placeholder="ID ou Nome Completo">                <button onclick="deleteGuest()">Remover</button>
+                <p id="delete-message" class="error"></p>
+                
+            </div>
+        </section>
+        
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

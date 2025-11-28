@@ -1,0 +1,227 @@
+/* Paleta de Cores:
+   - Dourado (Gold): #FFD700
+   - Carmezim (Crimson): #DC143C
+   - Azul Real (Royal Blue): #4169E1
+   - Branco/Base: #FFFFFF
+*/
+
+body {
+    font-family: 'Times New Roman', Times, serif; /* Fonte mais clássica */
+    margin: 0;
+    padding: 0;
+    background-color: #F8F8F8; /* Branco Sujo - Base */
+    color: #333333;
+    text-align: center;
+}
+
+header {
+    background-color: #FFFFFF;
+    color: #DC143C; /* Carmezim no cabeçalho */
+    padding: 15px;
+    border-bottom: 3px solid #FFD700; /* Linha Dourada */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #4169E1; /* Azul Real para títulos */
+}
+
+/* --- Menu Lateral (Fundo Escuro Elegante) --- */
+.open-btn {
+    /* Botão de Menu com toque Dourado */
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    font-size: 20px;
+    padding: 10px 15px;
+    z-index: 1000;
+    background-color: #4169E1;
+    color: #FFD700; 
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); /* Brilho Dourado */
+}
+
+#sidebar {
+    height: 100%;
+    width: 0; 
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    background-color: #333333; /* Fundo Escuro */
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    color: white;
+}
+
+#sidebar a {
+    padding: 12px 8px 12px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #FFD700; /* Links Dourados */
+    display: block;
+    transition: 0.3s;
+}
+
+#sidebar a:hover {
+    background-color: #4169E1; /* Fundo Azul ao passar */
+    color: #FFFFFF;
+}
+
+.close-btn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+#main-content {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+/* --- Leitor e Resultados --- */
+#reader {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 20px;
+    border: 3px solid #DC143C; /* Borda Carmezim */
+    box-shadow: 0 0 15px rgba(220, 20, 60, 0.4); /* Brilho Carmezim na câmera */
+}
+
+#result-box {
+    padding: 25px;
+    border-radius: 8px;
+    min-height: 80px;
+    margin-top: 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Botões --- */
+button {
+    padding: 12px 25px;
+    background-color: #4169E1; /* Azul Real */
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: #3355BB; /* Azul mais escuro ao passar */
+    box-shadow: 0 0 10px rgba(65, 105, 225, 0.7); /* Brilho sutil */
+}
+
+/* --- Feedback Visual --- */
+.success {
+    background-color: #F0FFF0; /* Fundo levemente verde/branco */
+    border: 2px solid #FFD700; /* Borda Dourada */
+    color: #008000;
+}
+
+.error {
+    background-color: #FFF0F5; /* Fundo levemente rosado/branco */
+    border: 2px solid #DC143C; /* Borda Carmezim */
+    color: #800000;
+}
+
+/* --- Admin e Listas --- */
+#login-form, #admin-content {
+    max-width: 350px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #CCCCCC;
+    border-radius: 8px;
+    text-align: left;
+    background-color: #FFFFFF;
+}
+
+input[type="text"], input[type="password"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #FFD700; /* Borda Dourada nos campos */
+    border-radius: 4px;
+}
+
+.list-summary {
+    background: #EAF4FF; /* Fundo Azul claro */
+    color: #4169E1;
+    border-radius: 4px;
+    border: 1px solid #4169E1;
+}
+
+#guest-list-output li {
+    background-color: #FFFFFF;
+    border-left: 5px solid;
+    margin-bottom: 6px;
+}
+
+#guest-list-output li.presente {
+    border-left-color: #008000; /* Verde para confirmado */
+}
+
+#guest-list-output li.ausente {
+    border-left-color: #DC143C; /* Carmezim para faltando */
+}
+
+.code-output {
+    padding: 15px;
+    margin-top: 15px;
+    background-color: #FFFBE6; /* Fundo Amarelo pálido para destaque de ID */
+    border: 2px dashed #FFD700; /* Borda Dourada tracejada */
+    word-break: break-all;
+    color: #333;
+}
+/* ... (Mantenha todos os estilos anteriores) ... */
+
+/* --- Estilos da Tabela Geral --- */
+#guest-list-output table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#guest-list-output th, #guest-list-output td {
+    border: 1px solid #FFD700; /* Borda Dourada */
+    padding: 10px;
+    text-align: left;
+}
+
+#guest-list-output th {
+    background-color: #4169E1; /* Azul Real */
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+#guest-list-output tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Cores de Status na Tabela */
+#guest-list-output tr.presente td:nth-child(2) {
+    color: green;
+    font-weight: bold;
+}
+
+#guest-list-output tr.ausente td:nth-child(2) {
+    color: #DC143C; /* Carmezim */
+    font-weight: bold;
+}
