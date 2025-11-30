@@ -1,74 +1,139 @@
-/* Paleta de Cores:
-   - Dourado (Gold): #FFD700
-   - Carmezim (Crimson): #DC143C
-   - Azul Real (Royal Blue): #4169E1
-   - Branco/Base: #FFFFFF
-*/
+/* style.css */
+
+:root {
+    --primary-color: #4169E1; /* Azul Real */
+    --secondary-color: #FFD700; /* Dourado */
+    --success-color: #28a745;
+    --error-color: #dc3545;
+    --bg-color: #f8f9fa;
+    --text-color: #343a40;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
 body {
-    font-family: 'Times New Roman', Times, serif; /* Fonte mais clássica */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     margin: 0;
     padding: 0;
-    background-color: #F8F8F8; /* Branco Sujo - Base */
-    color: #333333;
-    text-align: center;
+    min-height: 100vh;
+    transition: margin-left .3s;
 }
 
+/* --- TÍTULOS E CABEÇALHO --- */
 header {
-    background-color: #FFFFFF;
-    color: #DC143C; /* Carmezim no cabeçalho */
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px 15px;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+
+/* --- SEÇÕES DE CONTEÚDO --- */
+#main-content {
+    padding: 20px;
+}
+
+.content-section {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+}
+
+.content-section h2, .content-section h3 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--bg-color);
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+/* --- BOTÕES GERAIS (Touch Targets) --- */
+button, input[type="submit"], .btn {
+    display: block;
+    width: 100%;
     padding: 15px;
-    border-bottom: 3px solid #FFD700; /* Linha Dourada */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-h1, h2 {
-    color: #4169E1; /* Azul Real para títulos */
-}
-
-/* --- Menu Lateral (Fundo Escuro Elegante) --- */
-.open-btn {
-    /* Botão de Menu com toque Dourado */
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    font-size: 20px;
-    padding: 10px 15px;
-    z-index: 1000;
-    background-color: #4169E1;
-    color: #FFD700; 
+    margin-top: 10px;
     border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
     cursor: pointer;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); /* Brilho Dourado */
+    transition: background-color 0.3s ease, transform 0.1s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#sidebar {
-    height: 100%;
-    width: 0; 
-    position: fixed;
-    z-index: 2000;
-    top: 0;
-    left: 0;
-    background-color: #333333; /* Fundo Escuro */
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
+button:active, .btn:active {
+    transform: translateY(1px);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
     color: white;
 }
 
+.btn-success {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.btn-danger {
+    background-color: var(--error-color);
+    color: white;
+}
+
+.btn-light {
+    background-color: #e9ecef;
+    color: var(--text-color);
+}
+
+/* --- CAMPOS DE FORMULÁRIO --- */
+input[type="text"], input[type="password"], select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+/* --- SIDEBAR (MENU) --- */
+#sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: var(--text-color);
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+}
+
 #sidebar a {
-    padding: 12px 8px 12px 32px;
+    padding: 15px 15px 15px 32px;
     text-decoration: none;
-    font-size: 18px;
-    color: #FFD700; /* Links Dourados */
+    font-size: 1.1rem;
+    color: #f1f1f1;
     display: block;
     transition: 0.3s;
 }
 
 #sidebar a:hover {
-    background-color: #4169E1; /* Fundo Azul ao passar */
-    color: #FFFFFF;
+    background-color: #555;
+    color: var(--secondary-color);
 }
 
 .close-btn {
@@ -78,150 +143,140 @@ h1, h2 {
     font-size: 36px;
     margin-left: 50px;
     background: none;
-    border: none;
-    color: #FFFFFF;
-    cursor: pointer;
+    color: white;
+    padding: 0;
+    width: auto;
+    box-shadow: none;
 }
 
-#main-content {
-    transition: margin-left .5s;
-    padding: 20px;
+.open-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    font-size: 1.5rem;
+    padding: 10px 15px;
+    width: 50px;
+    z-index: 999;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    box-shadow: var(--shadow);
 }
 
-/* --- Leitor e Resultados --- */
+/* --- SEÇÃO DE SCANNER --- */
 #reader {
     width: 100%;
     max-width: 400px;
     margin: 0 auto 20px;
-    border: 3px solid #DC143C; /* Borda Carmezim */
-    box-shadow: 0 0 15px rgba(220, 20, 60, 0.4); /* Brilho Carmezim na câmera */
+    border: 3px solid var(--primary-color);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 #result-box {
-    padding: 25px;
-    border-radius: 8px;
-    min-height: 80px;
-    margin-top: 25px;
-    font-size: 1.2em;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    font-size: 1.2rem;
     font-weight: bold;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s;
 }
 
-/* --- Botões --- */
-button {
-    padding: 12px 25px;
-    background-color: #4169E1; /* Azul Real */
-    color: #FFFFFF;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 5px;
-    transition: background-color 0.3s, box-shadow 0.3s;
-    text-transform: uppercase;
+.pending {
+    background-color: #fff3cd; /* Amarelo Claro */
+    color: #856404;
 }
 
-button:hover {
-    background-color: #3355BB; /* Azul mais escuro ao passar */
-    box-shadow: 0 0 10px rgba(65, 105, 225, 0.7); /* Brilho sutil */
-}
-
-/* --- Feedback Visual --- */
 .success {
-    background-color: #F0FFF0; /* Fundo levemente verde/branco */
-    border: 2px solid #FFD700; /* Borda Dourada */
-    color: #008000;
+    background-color: #d4edda; /* Verde Claro */
+    color: var(--success-color);
+    border-left: 5px solid var(--success-color);
 }
 
 .error {
-    background-color: #FFF0F5; /* Fundo levemente rosado/branco */
-    border: 2px solid #DC143C; /* Borda Carmezim */
-    color: #800000;
+    background-color: #f8d7da; /* Vermelho Claro */
+    color: var(--error-color);
+    border-left: 5px solid var(--error-color);
 }
 
-/* --- Admin e Listas --- */
-#login-form, #admin-content {
-    max-width: 350px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #CCCCCC;
-    border-radius: 8px;
-    text-align: left;
-    background-color: #FFFFFF;
-}
-
-input[type="text"], input[type="password"] {
-    width: calc(100% - 22px);
-    padding: 10px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 1px solid #FFD700; /* Borda Dourada nos campos */
-    border-radius: 4px;
-}
-
+/* --- SEÇÃO DE LISTA --- */
 .list-summary {
-    background: #EAF4FF; /* Fundo Azul claro */
-    color: #4169E1;
-    border-radius: 4px;
-    border: 1px solid #4169E1;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    background-color: #e9ecef;
+    border-radius: 6px;
+    font-weight: bold;
+    flex-wrap: wrap; 
 }
 
-#guest-list-output li {
-    background-color: #FFFFFF;
-    border-left: 5px solid;
-    margin-bottom: 6px;
+.list-summary span {
+    padding: 5px;
 }
 
-#guest-list-output li.presente {
-    border-left-color: #008000; /* Verde para confirmado */
+.list-options button {
+    width: 32%;
+    display: inline-block;
+    padding: 10px;
+    font-size: 0.9rem;
+    background-color: #f1f1f1;
+    color: var(--text-color);
+    border: 1px solid #ced4da;
+    box-shadow: none;
 }
 
-#guest-list-output li.ausente {
-    border-left-color: #DC143C; /* Carmezim para faltando */
+.list-options button:hover {
+    background-color: #ddd;
 }
 
-.code-output {
-    padding: 15px;
-    margin-top: 15px;
-    background-color: #FFFBE6; /* Fundo Amarelo pálido para destaque de ID */
-    border: 2px dashed #FFD700; /* Borda Dourada tracejada */
-    word-break: break-all;
-    color: #333;
-}
-/* ... (Mantenha todos os estilos anteriores) ... */
-
-/* --- Estilos da Tabela Geral --- */
 #guest-list-output table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#guest-list-output th, #guest-list-output td {
-    border: 1px solid #FFD700; /* Borda Dourada */
-    padding: 10px;
-    text-align: left;
-}
-
-#guest-list-output th {
-    background-color: #4169E1; /* Azul Real */
-    color: white;
-    text-transform: uppercase;
     font-size: 0.9em;
 }
 
+#guest-list-output th, #guest-list-output td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+#guest-list-output thead th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
 #guest-list-output tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #f2f2f2;
 }
 
-/* Cores de Status na Tabela */
-#guest-list-output tr.presente td:nth-child(2) {
-    color: green;
+.presente {
+    color: var(--success-color);
     font-weight: bold;
 }
 
-#guest-list-output tr.ausente td:nth-child(2) {
-    color: #DC143C; /* Carmezim */
-    font-weight: bold;
+.ausente {
+    color: var(--error-color);
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 600px) {
+    .list-options button {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}
+
+@media (min-width: 768px) {
+    #main-content {
+        padding: 30px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    .list-options button {
+        width: 33%;
+    }
 }
