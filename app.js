@@ -91,7 +91,8 @@ const INITIAL_GUEST_DATA = [
     {"id":"L6U2","casal":"Casal Laurindo","categoria":"A","limite":1,"scans":0},
     {"id":"A1S3","casal":"Alfredo da Costa Gaieta","categoria":"C","limite":1,"scans":0},
     {"id":"C5H7","casal":"Casal Carruagem (Filhos)","categoria":"A","limite":1,"scans":0},
-    {"id":"L8P4","casal":"Casal Luís Gaspar","categoria":"A","limite":1,"scans":0}
+    {"id":"L8P4","casal":"Casal Luís Gaspar","categoria":"A","limite":1,"scans":0},
+    {"id":"C9D5","casal":"Casal Constantino Dumbo","categoria":"A","limite":1,"scans":0}
     
 ];
 
