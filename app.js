@@ -92,7 +92,12 @@ const INITIAL_GUEST_DATA = [
     {"id":"A1S3","casal":"Alfredo da Costa Gaieta","categoria":"C","limite":1,"scans":0},
     {"id":"C5H7","casal":"Casal Carruagem (Filhos)","categoria":"A","limite":1,"scans":0},
     {"id":"L8P4","casal":"Casal Luís Gaspar","categoria":"A","limite":1,"scans":0},
-    {"id":"C9D5","casal":"Casal Constantino Dumbo","categoria":"A","limite":1,"scans":0}
+    {"id":"C9D5","casal":"Casal Constantino Dumbo","categoria":"A","limite":1,"scans":0},
+    {"id":"J8N1","casal":"Justino","categoria":"C","limite":2,"scans":0},
+    {"id":"M2G9","casal":"Mário e Glória","categoria":"C","limite":2,"scans":0},
+    {"id":"U5A7","casal":"Casal Usana","categoria":"A","limite":1,"scans":0},
+    {"id":"D3C4","casal":"Delfina Cavonguelua","categoria":"C","limite":2,"scans":0},
+    {"id":"R7O2","casal":"Casal Rocha","categoria":"A","limite":1,"scans":0}
     
 ];
 
