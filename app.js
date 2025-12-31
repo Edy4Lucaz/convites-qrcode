@@ -75,7 +75,7 @@ const INITIAL_GUEST_DATA = [
     {"id":"J7V5","casal":"Casal José Tchivela","categoria":"A","limite":1,"scans":0},
     {"id":"A8O2","casal":"Casal Augusto Coríntio","categoria":"A","limite":1,"scans":0},
     {"id":"A4M6","casal":"Casal Alberto Tchombossi","categoria":"A","limite":1,"scans":0},
-    {"id":"J1I3","casal":"Casal Jaime","categoria":"A","limite":1,"scans":0},
+    {"id":"J1I3","casal":"Casal Jaime","categoria":"A","limite":2,"scans":0},
     {"id":"E9Y7","casal":"Evandra e Deisy","categoria":"C","limite":2,"scans":0},
     {"id":"B2U4","casal":"Casal Bandua","categoria":"A","limite":1,"scans":0},
     {"id":"A6N8","casal":"Casal Amândio Bonefácio","categoria":"A","limite":1,"scans":0},
